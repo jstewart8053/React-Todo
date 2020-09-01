@@ -50,10 +50,25 @@ class App extends React.Component {
      id: new Date(),
      completed: false
    };
-this.setState({
+return this.setState({
   list: [...this.state.list, newTask]
 })
  }
+//clearItem property
+clearItem = (event) => {
+  event.preventDefault()
+  return this.setState({
+    list: this.state.list.filter((item) => {
+      if(item.completed === true) {
+        return (item = undefined)
+      } else {
+        return item;
+      }
+    })
+  })
+}
+
+
  render() {
    return (
      <div className = 'App'>
@@ -64,6 +79,7 @@ this.setState({
          <TodoList
          list = {this.state.list}
          toggleCompleted = {this.toggleCompleted}
+         clearItem = {this.clearItem}
          />
          </div>
    )

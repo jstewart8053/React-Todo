@@ -34,7 +34,7 @@ h1 {
 }
 
 .todo.completed {
-    background-color: lightblue;
+    background-color: lightpink;
     text-decoration: line-through;
 }
 
